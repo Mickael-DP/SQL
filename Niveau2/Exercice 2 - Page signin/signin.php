@@ -35,7 +35,7 @@ if (isset($_POST["submit"])){
     
         $rowCount = $req->rowCount();
 
-        if ($rowCount) {
+        if ($rowCount === 0) {
             $sql="INSERT INTO utilisateurs (nom, prenom, email, password, statut) VALUES (?,?,?,?,?)";
             $insertmbr = $bdd->prepare($sql);
             $insertmbr->execute(array($nom, $prenom, $email, $passwordHash, $statut));
