@@ -1,4 +1,5 @@
 <?php
+
 $bdd = new PDO('mysql:host=localhost;dbname=niv2 /exo1','root','');
 
 if (isset($_POST ['submit'])){
@@ -29,8 +30,8 @@ if (isset($_POST ['submit'])){
                 $message = "Aucun membre inscrit a cette adresse mail";
             }
         
-        $sql= "INSERT INTO connexion(login, password, tentative) VALUES(?,?,?)";
-        $insertmbr=$bdd->prepare($sql);
+        $sql= "INSERT INTO connexion(login, password,tentative) VALUES(?,?,?)";
+        $insertmbr = $bdd->prepare($sql);
         $insertmbr->execute(array($login, $password, $tentative));
         
     }
@@ -79,6 +80,7 @@ if (isset($_POST ['submit'])){
                 </div>
             
         </form>
+        <a href="resetpassword.php">Mot de passe oublié ?</a>
     
     <?php
     if(isset($message)){
