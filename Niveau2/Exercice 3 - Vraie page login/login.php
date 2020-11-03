@@ -11,7 +11,7 @@ if (isset($_POST ['submit'])){
     
     $tentative= date('Y-m-d H:i:s');
     
-    $success= $validLogin && $validPassword;
+    $success= $validLogin && $validPassword; 
 
     if ($success){
         
